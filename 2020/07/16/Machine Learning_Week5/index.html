@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/7 | Welcome!</title>
+  <title>Machine Learning_Week5 | Welcome!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Welcome!">
-<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
+  <meta name="description" content="Machine learning process&#x2F;routine1. Training data using example set and calculate errors use a for loop (for i &#x3D; 0 to m) to obtain trained theta matrix (i.e., training based on 1, 2, …. m examples, say">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning_Week5">
+<meta property="og:url" content="http://yoursite.com/2020/07/16/Machine%20Learning_Week5/index.html">
 <meta property="og:site_name" content="Welcome!">
+<meta property="og:description" content="Machine learning process&#x2F;routine1. Training data using example set and calculate errors use a for loop (for i &#x3D; 0 to m) to obtain trained theta matrix (i.e., training based on 1, 2, …. m examples, say">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/assets/learning%20curve.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/16/Machine%20Learning_Week5/assets/lambda.png">
+<meta property="article:published_time" content="2020-07-16T12:46:34.000Z">
+<meta property="article:modified_time" content="2020-07-17T12:45:27.235Z">
 <meta property="article:author" content="Yang ZHOU">
+<meta property="article:tag" content="machine learning">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/assets/learning%20curve.png">
   
     <link rel="alternative" href="/atom.xml" title="Welcome!" type="application/atom+xml">
   
@@ -156,36 +164,92 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Machine Learning_Week5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/16/Machine%20Learning_Week5/" class="archive-article-date">
-  	<time datetime="2020-07-16T12:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/16/Machine%20Learning_Week5/">Machine Learning_Week5</a>
+    <h1 class="article-title" itemprop="name">
+      Machine Learning_Week5
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/07/16/Machine%20Learning_Week5/" class="archive-article-date">
+  	<time datetime="2020-07-16T12:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Machine-learning-process-routine"><a href="#Machine-learning-process-routine" class="headerlink" title="Machine learning process/routine"></a>Machine learning process/routine</h1><h1 id="1-Training-data-using-example-set-and-calculate-errors"><a href="#1-Training-data-using-example-set-and-calculate-errors" class="headerlink" title="1. Training data using example set and calculate errors"></a>1. Training data using example set and calculate errors</h1><ul>
+<li>use a for loop (for i = 0 to m) to obtain trained theta matrix (i.e., training based on 1, 2, …. m examples, say compute m times in total)</li>
+<li>in each loop, compute $error_{train}$ and $error_{cv}$ (error ($\lambda =0$) is different from $J(\theta)$, where the $J(\theta)$ has $\lambda$ terms for regularization)</li>
+<li><p>when calculating error, treat training set and cross validation set differently: </p>
+<ul>
+<li>$error_{train}$ is calculated based on i samples (depending on the loop, NOT entire training set) </li>
+<li>$error_{cv}$ is calculated based on ENTIRE cross validation set.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for i &#x3D; 1:m,</span><br><span class="line">	theta &#x3D; trainLinearReg (X(1:i,:),y(1:i),lambda);</span><br><span class="line">	error_train(i) &#x3D; linearRegCostFunction(X(1:i,:),y(1:i,:),theta, 0);</span><br><span class="line">	error_val(i) &#x3D; linearRegCostFunction(Xval,yval,theta, 0);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h1 id="2-Plot-learning-curves-based-on-errors-to-identify-bias-and-variance"><a href="#2-Plot-learning-curves-based-on-errors-to-identify-bias-and-variance" class="headerlink" title="2. Plot learning curves based on errors to identify bias and variance"></a>2. Plot learning curves based on errors to identify bias and variance</h1></li>
+</ul>
+</li>
+<li><p>x axis is the number of examples used in TRAINING SET</p>
+</li>
+<li>y is error, not J($\theta$)</li>
+</ul>
+<p><img src="/assets/learning%20curve.png" alt="learning curve"></p>
+<ul>
+<li>Bias or Variance based on learning curves:<ul>
+<li>Bias (underfit): training and cross validation converged at high error </li>
+<li>Variance (overfit): training set has very low error and cross validation cannot converge with training set (a gap exists between two curves)<h1 id="3-Polynomial-regression-when-bias-improve-underfit"><a href="#3-Polynomial-regression-when-bias-improve-underfit" class="headerlink" title="3. Polynomial regression when bias (improve underfit)"></a>3. Polynomial regression when bias (improve underfit)</h1></li>
+</ul>
+</li>
+<li>$h_{\theta}(x)=\theta_0+\theta_1<em>x_1+\theta_2</em>x_1^2+\theta_3<em>x_1^3+…+\theta_p</em>x_1^p$</li>
+<li>keep in mind that in the above hypothsis, there is still ONE feature, not p features.</li>
+</ul>
+<h1 id="4-Select-a-good-lambda-term-improve-overfit"><a href="#4-Select-a-good-lambda-term-improve-overfit" class="headerlink" title="4. Select a good lambda term (improve overfit):"></a>4. Select a good lambda term (improve overfit):</h1><p><img src="assets/lambda.png" alt="lambda"></p>
+<ul>
+<li>lambda can have a huge influence on error: try $\lambda$ in the range: {0, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1, 3, 10} and pick up a good $\lambda$ (lowest $error_{cv}$)</li>
+</ul>
+<h1 id="5-Computing-test-set-error"><a href="#5-Computing-test-set-error" class="headerlink" title="5. Computing test set error"></a>5. Computing test set error</h1><ul>
+<li>once proper $\lambda$ and polynomial terms have been selected, we can obtain an optimized $\theta$ matrix</li>
+<li>apply this optimized $\theta$ to test set and compute corresponding error</li>
+</ul>
+<h1 id="6-Further-improvement-randomly-select-samples-for-ploting-learning-curve"><a href="#6-Further-improvement-randomly-select-samples-for-ploting-learning-curve" class="headerlink" title="6. Further improvement: randomly select samples for ploting learning curve"></a>6. Further improvement: randomly select samples for ploting learning curve</h1><ul>
+<li>to determine the $error_{train}$ and $error_{cross validation}$, it is better to randomly select i examples from training set and i examples from cross<br>i examples</li>
+<li>learn the parameters $\theta$ matrixs using the randomly chosen training set and evaluate the parameters</li>
+<li>repeat certain times (e.g, 50) and get average errors for better representativeness</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,84 +261,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/16/Machine%20Learning_Week5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/16/helloMarkdown/" class="archive-article-date">
-  	<time datetime="2020-07-16T01:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/16/helloMarkdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">helloMarkdown</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/16/helloMarkdown/">helloMarkdown</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/16/hello-world/" class="archive-article-date">
-  	<time datetime="2020-07-15T14:40:23.289Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/16/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -297,8 +383,8 @@
 	var yiliaConfig = {
 		mathjax: [object Object],
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
