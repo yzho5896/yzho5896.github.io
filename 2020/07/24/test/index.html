@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test | Welcome!</title>
+  <title>Showing images correctly in blogs (github pages) with hexo and markdown | Welcome!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="test">
+  <meta name="description" content="Step1: Modifing _config.yml in blog’s root file1234post_asset_folder:false&#96;&#96;&#96; change above to true such that it will automatically generate an empty folder named &lt;post_name&gt; in &amp;quot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
+<meta property="og:title" content="Showing images correctly in blogs (github pages) with hexo and markdown">
 <meta property="og:url" content="http://yoursite.com/2020/07/24/test/index.html">
 <meta property="og:site_name" content="Welcome!">
-<meta property="og:description" content="test">
+<meta property="og:description" content="Step1: Modifing _config.yml in blog’s root file1234post_asset_folder:false&#96;&#96;&#96; change above to true such that it will automatically generate an empty folder named &lt;post_name&gt; in &amp;quot">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/07/24/test/image.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/24/test/image1.png">
 <meta property="article:published_time" content="2020-07-24T04:14:46.000Z">
-<meta property="article:modified_time" content="2020-07-24T04:24:15.197Z">
+<meta property="article:modified_time" content="2020-07-24T04:51:06.713Z">
 <meta property="article:author" content="Yang ZHOU">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/07/24/test/image.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/24/test/image1.png">
   
     <link rel="alternative" href="/atom.xml" title="Welcome!" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      Showing images correctly in blogs (github pages) with hexo and markdown
     </h1>
   
 
@@ -182,7 +182,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p><img src="/2020/07/24/test/image.png" alt="image"></p>
+        <h2 id="Step1-Modifing-config-yml-in-blog’s-root-file"><a href="#Step1-Modifing-config-yml-in-blog’s-root-file" class="headerlink" title="Step1: Modifing _config.yml in blog’s root file"></a>Step1: Modifing _config.yml in blog’s root file</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder:false</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">change above to true such that it will automatically generate an empty folder named &lt;post_name&gt; in &quot;.\source\_posts&quot; when using the command hexo n &lt;post_name&gt; in cmd terminal. Put images that are inserted in markdown file into this empty folder.</span><br><span class="line">Example:</span><br></pre></td></tr></table></figure>
+<p>hexo new test<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This will generate a new markdown file test.md and an empty folder named &quot;test&quot; in &quot;_posts&quot; folder. Then in the test.md file, using the following syntax to insert images:</span><br></pre></td></tr></table></figure><br><img src="/2020/07/24/test/image1.png" alt="image1"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Also make sure to save the image1.png in _posts\test folder.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Step2: Installing add-on</span><br><span class="line">In cmd, typing the following command to install the add-on for showing images in blog pages.</span><br></pre></td></tr></table></figure><br>npm install <a href="https://github.com/7ym0n/hexo-asset-image" target="_blank" rel="noopener">https://github.com/7ym0n/hexo-asset-image</a> —save<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## Step3: Alternative method to insert images</span><br></pre></td></tr></table></figure><br><br>```<br>Alternative way to the tradtional markdown syntax (see step1), it is possible to use this syntax. </p>
+<p>Please refer the following link for details:</p>
+<p><a href="https://www.cnblogs.com/Jesee/p/11234387.html" target="_blank" rel="noopener">https://www.cnblogs.com/Jesee/p/11234387.html</a></p>
 
       
 
@@ -277,8 +280,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/07/20/week7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">week7</div>
+    <a href="/2020/07/24/Showing%20images%20correctly%20in%20blogs%20(github%20pages)%20with%20hexo%20and%20markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Present images in blogs with hexo</div>
       <i class="icon-circle-right"></i>
     </a>
   
