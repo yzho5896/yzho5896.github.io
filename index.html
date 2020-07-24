@@ -158,6 +158,131 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/24/test/">test</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/24/test/" class="archive-article-date">
+  	<time datetime="2020-07-24T04:14:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p><img src="/2020/07/24/test/image.png" alt="image"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/24/test/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-week7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/week7/">week7</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/20/week7/" class="archive-article-date">
+  	<time datetime="2020-07-20T01:25:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/20/week7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Machine Learning_Week5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,31 +303,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Machine-learning-process-routine"><a href="#Machine-learning-process-routine" class="headerlink" title="Machine learning process/routine"></a>Machine learning process/routine</h1><h1 id="1-Training-data-using-example-set-and-calculate-errors"><a href="#1-Training-data-using-example-set-and-calculate-errors" class="headerlink" title="1. Training data using example set and calculate errors"></a>1. Training data using example set and calculate errors</h1><ul>
+        <p><font size="8" face="微软雅黑"></font></p>
+<h1 id="Machine-learning-process-routine"><a href="#Machine-learning-process-routine" class="headerlink" title="Machine learning process/routine "></a>Machine learning process/routine <br></h1><h1 id="1-Training-data-using-example-set-and-calculate-errors"><a href="#1-Training-data-using-example-set-and-calculate-errors" class="headerlink" title="1. Training data using example set and calculate errors "></a>1. Training data using example set and calculate errors <br></h1><ul>
 <li>use a for loop (for i = 0 to m) to obtain trained theta matrix (i.e., training based on 1, 2, …. m examples, say compute m times in total)</li>
 <li>in each loop, compute $error_{train}$ and $error_{cv}$ (error ($\lambda =0$) is different from $J(\theta)$, where the $J(\theta)$ has $\lambda$ terms for regularization)</li>
-<li><p>when calculating error, treat training set and cross validation set differently: </p>
-<ul>
+<li>when calculating error, treat training set and cross validation set differently: <ul>
 <li>$error_{train}$ is calculated based on i samples (depending on the loop, NOT entire training set) </li>
 <li>$error_{cv}$ is calculated based on ENTIRE cross validation set.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for i &#x3D; 1:m,</span><br><span class="line">	theta &#x3D; trainLinearReg (X(1:i,:),y(1:i),lambda);</span><br><span class="line">	error_train(i) &#x3D; linearRegCostFunction(X(1:i,:),y(1:i,:),theta, 0);</span><br><span class="line">	error_val(i) &#x3D; linearRegCostFunction(Xval,yval,theta, 0);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h1 id="2-Plot-learning-curves-based-on-errors-to-identify-bias-and-variance"><a href="#2-Plot-learning-curves-based-on-errors-to-identify-bias-and-variance" class="headerlink" title="2. Plot learning curves based on errors to identify bias and variance"></a>2. Plot learning curves based on errors to identify bias and variance</h1></li>
+</li>
 </ul>
 </li>
-<li><p>x axis is the number of examples used in TRAINING SET</p>
-</li>
+</ul>
+<h1 id="2-Plot-learning-curves-based-on-errors-to-identify-bias-and-variance"><a href="#2-Plot-learning-curves-based-on-errors-to-identify-bias-and-variance" class="headerlink" title="2. Plot learning curves based on errors to identify bias and variance"></a>2. Plot learning curves based on errors to identify bias and variance</h1><ul>
+<li>x axis is the number of examples used in TRAINING SET</li>
 <li>y is error, not J($\theta$)</li>
 </ul>
-<p><img src="/assets/learning%20curve.png" alt="learning curve"></p>
+<p><img src="/2020/07/16/Machine%20Learning_Week5/learning curve.png" alt="learning curve"></p>
 <ul>
 <li>Bias or Variance based on learning curves:<ul>
 <li>Bias (underfit): training and cross validation converged at high error </li>
-<li>Variance (overfit): training set has very low error and cross validation cannot converge with training set (a gap exists between two curves)<h1 id="3-Polynomial-regression-when-bias-improve-underfit"><a href="#3-Polynomial-regression-when-bias-improve-underfit" class="headerlink" title="3. Polynomial regression when bias (improve underfit)"></a>3. Polynomial regression when bias (improve underfit)</h1></li>
+<li>Variance (overfit): training set has very low error and cross validation cannot converge with training set (a gap exists between two curves)</li>
 </ul>
 </li>
+</ul>
+<h1 id="3-Polynomial-regression-when-bias-improve-underfit"><a href="#3-Polynomial-regression-when-bias-improve-underfit" class="headerlink" title="3. Polynomial regression when bias (improve underfit)"></a>3. Polynomial regression when bias (improve underfit)</h1><ul>
 <li>$h_{\theta}(x)=\theta_0+\theta_1<em>x_1+\theta_2</em>x_1^2+\theta_3<em>x_1^3+…+\theta_p</em>x_1^p$</li>
 <li>keep in mind that in the above hypothsis, there is still ONE feature, not p features.</li>
 </ul>
-<h1 id="4-Select-a-good-lambda-term-improve-overfit"><a href="#4-Select-a-good-lambda-term-improve-overfit" class="headerlink" title="4. Select a good lambda term (improve overfit):"></a>4. Select a good lambda term (improve overfit):</h1><p><img src="assets/lambda.png" alt="lambda"></p>
+<h1 id="4-Select-a-good-lambda-term-improve-overfit"><a href="#4-Select-a-good-lambda-term-improve-overfit" class="headerlink" title="4. Select a good lambda term (improve overfit):"></a>4. Select a good lambda term (improve overfit):</h1><p><img src="/2020/07/16/Machine%20Learning_Week5/lambda.png" alt="lambda"></p>
 <ul>
 <li>lambda can have a huge influence on error: try $\lambda$ in the range: {0, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1, 3, 10} and pick up a good $\lambda$ (lowest $error_{cv}$)</li>
 </ul>
@@ -572,11 +700,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
             
             <div class="clearfix"></div>
